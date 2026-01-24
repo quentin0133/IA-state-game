@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://k4bnjg1srj1x"]
+
+[ext_resource type="PackedScene" uid="uid://c6mi6u1ty5nqr" path="res://scenes/player/player.tscn" id="1_o5qli"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_sgp6g"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o5qli"]
+albedo_color = Color(0.5, 0.5, 0.5, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0wfyh"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+transform = Transform3D(75, 0, 0, 0, 1, 0, 0, 0, 75, 0, 0, 0)
+mesh = SubResource("BoxMesh_sgp6g")
+surface_material_override/0 = SubResource("StandardMaterial3D_o5qli")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ground"]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/StaticBody3D"]
+shape = SubResource("BoxShape3D_0wfyh")
+
+[node name="Player" parent="." instance=ExtResource("1_o5qli")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
