@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bpsolng4y1hy7"
-path="res://.godot/imported/X Bot.fbx-d09d25ef2650e0f16df8e057e0f6aa7d.scn"
+uid="uid://j0k3nrxi7vwn"
+path="res://.godot/imported/Bouncing Fight Idle.fbx-8336dee56e72c99578a0b8e2a19b95e2.scn"
 
 [deps]
 
-source_file="res://assets/player/sources/X Bot.fbx"
-dest_files=["res://.godot/imported/X Bot.fbx-d09d25ef2650e0f16df8e057e0f6aa7d.scn"]
+source_file="res://assets/model3D/player/sources/Bouncing Fight Idle.fbx"
+dest_files=["res://.godot/imported/Bouncing Fight Idle.fbx-8336dee56e72c99578a0b8e2a19b95e2.scn"]
 
 [params]
 

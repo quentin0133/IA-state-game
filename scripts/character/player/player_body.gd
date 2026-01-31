@@ -7,28 +7,30 @@ const JUMP_VELOCITY = 4.5
 @export var max_speed = 5.0
 
 @onready var player_controller: PlayerController = $"../PlayerController"
+@onready var camera: CameraRig = $Visual/Skeleton3D/CameraRig
 
-var direction: Vector2 = Vector2.ZERO
+var input_dir: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
-	player_controller.direction_changed.connect(set_direction)
+	player_controller.input_dir_changed.connect(set_input_dir)
 	player_controller.want_jump.connect(jump)
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
-	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.y * SPEED
+	if input_dir != Vector2.ZERO:
+		var relative_dir = camera.get_relative_direction_y(input_dir);
+		velocity.x = relative_dir.x * SPEED
+		velocity.z = relative_dir.z * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	
 	move_and_slide()
 
-func set_direction(direction: Vector2):
-	self.direction = direction
+func set_input_dir(input_dir: Vector2):
+	self.input_dir = input_dir
 
 func jump():
 	if is_on_floor():

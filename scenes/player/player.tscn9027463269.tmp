@@ -1446,15 +1446,12 @@ libraries = {
 &"": SubResource("AnimationLibrary_wpx7f")
 }
 
-[node name="CameraRig" type="Node3D" parent="CharacterBody3D/Visual/Skeleton3D" node_paths=PackedStringArray("player", "player_mesh")]
+[node name="CameraRig" type="Node3D" parent="CharacterBody3D/Visual/Skeleton3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.35, 0)
 script = ExtResource("3_gmlin")
 sensitivity = 2.0
 min_pitch = -0.8726646259971648
 max_pitch = 0.5235987755982988
-wall_layer = 4
-player = NodePath("../../..")
-player_mesh = NodePath("../Beta_Surface")
 
 [node name="Yaw" type="Node3D" parent="CharacterBody3D/Visual/Skeleton3D/CameraRig"]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
@@ -1476,8 +1473,7 @@ fov = 50.0
 script = ExtResource("4_lvxji")
 spring_arm = NodePath("../SpringArm3D/SpringPosition")
 lerp_power = 8.0
-target = NodePath("../SpringArm3D")
-min_distance = 1.5
+target = NodePath("../../../../../../..")
 
 [node name="PhysicCollisionShape" type="CollisionShape3D" parent="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.90317327, 0)

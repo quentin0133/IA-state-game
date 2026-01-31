@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://j0k3nrxi7vwn"
-path="res://.godot/imported/Bouncing Fight Idle.fbx-fafd2bdf4dbd43c2c51be91f0cc9f92a.scn"
+uid="uid://wcb5c5smdno6"
+path="res://.godot/imported/Treadmill Running.fbx-269d2e3777d6233b0e3654bb63dcac88.scn"
 
 [deps]
 
-source_file="res://assets/player/sources/Bouncing Fight Idle.fbx"
-dest_files=["res://.godot/imported/Bouncing Fight Idle.fbx-fafd2bdf4dbd43c2c51be91f0cc9f92a.scn"]
+source_file="res://assets/model3D/player/sources/Treadmill Running.fbx"
+dest_files=["res://.godot/imported/Treadmill Running.fbx-269d2e3777d6233b0e3654bb63dcac88.scn"]
 
 [params]
 

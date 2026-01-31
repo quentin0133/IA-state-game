@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cp0hxkuq3f46h"]
+
+[ext_resource type="Shader" uid="uid://5yhc1up1vboe" path="res://assets/materials/depth_fade/depth_fade.gdshader" id="1_ulggg"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_ulggg")
+shader_parameter/target_bottom = Vector3(0, 0, 0)
+shader_parameter/target_top = Vector3(0, 0, 0)
+shader_parameter/radius = 0.9
+shader_parameter/softness = 0.25

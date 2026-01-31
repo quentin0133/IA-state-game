@@ -1,9 +1,8 @@
-[gd_scene load_steps=16 format=4 uid="uid://c6mi6u1ty5nqr"]
+[gd_scene load_steps=15 format=4 uid="uid://c6mi6u1ty5nqr"]
 
 [ext_resource type="Script" uid="uid://c8nfd7kgdtmhd" path="res://scripts/character/player/player_controller.gd" id="1_gmlin"]
 [ext_resource type="Script" uid="uid://b1rjfk78llqrv" path="res://scripts/character/player/player_body.gd" id="2_dovo2"]
 [ext_resource type="Script" uid="uid://dawpd2x6lmk1m" path="res://scripts/character/player/camera/camera_rig.gd" id="3_gmlin"]
-[ext_resource type="Script" uid="uid://d0e31e662sd5i" path="res://scripts/character/player/camera/camera_follow.gd" id="4_lvxji"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gybeb"]
 resource_name = "Beta_HighLimbsGeoSG3"
@@ -956,9 +955,8 @@ _data = {
 &"mixamo_com": SubResource("Animation_0fb76")
 }
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_gmlin"]
-custom_solver_bias = 1.0
-radius = 0.2
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gmlin"]
+radius = 1.0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_75vfm"]
 radius = 0.234375
@@ -970,8 +968,8 @@ height = 1.817688
 script = ExtResource("1_gmlin")
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
-collision_layer = 15
-collision_mask = 15
+collision_layer = 7
+collision_mask = 7
 script = ExtResource("2_dovo2")
 
 [node name="Visual" type="Node3D" parent="CharacterBody3D"]
@@ -1446,38 +1444,23 @@ libraries = {
 &"": SubResource("AnimationLibrary_wpx7f")
 }
 
-[node name="CameraRig" type="Node3D" parent="CharacterBody3D/Visual/Skeleton3D" node_paths=PackedStringArray("player", "player_mesh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.35, 0)
+[node name="CameraRig" type="Node3D" parent="CharacterBody3D/Visual/Skeleton3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
 script = ExtResource("3_gmlin")
-sensitivity = 2.0
-min_pitch = -0.8726646259971648
-max_pitch = 0.5235987755982988
-wall_layer = 4
-player = NodePath("../../..")
-player_mesh = NodePath("../Beta_Surface")
+min_pitch = -1.0
+max_pitch = 0.4
 
 [node name="Yaw" type="Node3D" parent="CharacterBody3D/Visual/Skeleton3D/CameraRig"]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="Pitch" type="Node3D" parent="CharacterBody3D/Visual/Skeleton3D/CameraRig/Yaw"]
-transform = Transform3D(1, 0, 0, 0, 0.90630776, 0.42261827, 0, -0.42261827, 0.90630776, 0, 0, 0)
 
 [node name="SpringArm3D" type="SpringArm3D" parent="CharacterBody3D/Visual/Skeleton3D/CameraRig/Yaw/Pitch"]
-collision_mask = 12
-shape = SubResource("SphereShape3D_gmlin")
+collision_mask = 4
+shape = SubResource("CapsuleShape3D_gmlin")
 spring_length = 3.0
 margin = 0.5
 
-[node name="SpringPosition" type="Node3D" parent="CharacterBody3D/Visual/Skeleton3D/CameraRig/Yaw/Pitch/SpringArm3D"]
-
-[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Visual/Skeleton3D/CameraRig/Yaw/Pitch" node_paths=PackedStringArray("spring_arm", "target")]
-transform = Transform3D(1, 0, -7.1054274e-15, 0, 1.0000001, 0, -7.1054274e-15, 0, 1.0000001, 0, 0, 3)
-fov = 50.0
-script = ExtResource("4_lvxji")
-spring_arm = NodePath("../SpringArm3D/SpringPosition")
-lerp_power = 8.0
-target = NodePath("../SpringArm3D")
-min_distance = 1.5
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Visual/Skeleton3D/CameraRig/Yaw/Pitch/SpringArm3D"]
 
 [node name="PhysicCollisionShape" type="CollisionShape3D" parent="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.90317327, 0)

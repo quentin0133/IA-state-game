@@ -45,6 +45,11 @@ Jump={
 
 [layer_names]
 
+3d_render/layer_1="Player"
+3d_render/layer_2="Enemi"
+3d_render/layer_3="Wall"
+3d_render/layer_4="Ground"
 3d_physics/layer_1="Player"
 3d_physics/layer_2="Enemy"
-3d_physics/layer_3="GroundWall"
+3d_physics/layer_3="Wall"
+3d_physics/layer_4="Ground"

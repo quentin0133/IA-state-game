@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://wcb5c5smdno6"
-path="res://.godot/imported/Treadmill Running.fbx-deb745006c8197b0b787f4b16da6269c.scn"
+uid="uid://bpsolng4y1hy7"
+path="res://.godot/imported/X Bot.fbx-6961f49033c04c669bcf81be7bd2fe8f.scn"
 
 [deps]
 
-source_file="res://assets/player/sources/Treadmill Running.fbx"
-dest_files=["res://.godot/imported/Treadmill Running.fbx-deb745006c8197b0b787f4b16da6269c.scn"]
+source_file="res://assets/model3D/player/sources/X Bot.fbx"
+dest_files=["res://.godot/imported/X Bot.fbx-6961f49033c04c669bcf81be7bd2fe8f.scn"]
 
 [params]
 
