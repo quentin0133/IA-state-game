@@ -6,10 +6,11 @@ const JUMP_VELOCITY = 4.5
 @export var jump_velocity = 4.5
 @export var max_speed = 5.0
 
-@onready var player_controller: PlayerController = $"../PlayerController"
-@onready var camera: CameraRig = $Visual/Skeleton3D/CameraRig
+@export var player_controller: PlayerController
+@export var camera: CameraRig
 
 var input_dir: Vector2 = Vector2.ZERO
+var aimed_rotation = 0.0;
 
 func _ready() -> void:
 	player_controller.input_dir_changed.connect(set_input_dir)
@@ -23,6 +24,8 @@ func _physics_process(delta: float) -> void:
 		var relative_dir = camera.get_relative_direction_y(input_dir);
 		velocity.x = relative_dir.x * SPEED
 		velocity.z = relative_dir.z * SPEED
+		aimed_rotation = Vector2(relative_dir.z, relative_dir.x).angle()
+		rotation.y = rotate_toward(rotation.y, aimed_rotation, delta * 5.0)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
