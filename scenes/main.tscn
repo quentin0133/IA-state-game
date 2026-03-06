@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://k4bnjg1srj1x"]
+[gd_scene load_steps=9 format=3 uid="uid://k4bnjg1srj1x"]
 
 [ext_resource type="Material" uid="uid://cp0hxkuq3f46h" path="res://assets/materials/depth_fade/wall.tres" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://c6mi6u1ty5nqr" path="res://scenes/player/player.tscn" id="1_o5qli"]
@@ -13,6 +13,8 @@ albedo_color = Color(0.5, 0.5, 0.5, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_o5qli"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sugp2"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_0wfyh"]
 
 [node name="Node" type="Node3D"]
 
@@ -47,3 +49,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.66199243, 0.7495105, 0, -0.7495105, -0.66199243, 0, 0, 0)
+
+[node name="Enemy" type="MeshInstance3D" parent="." groups=["Enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7435417, 1.7923439, -0.8249186)
+mesh = SubResource("CapsuleMesh_0wfyh")

@@ -1,21 +1,17 @@
 class_name PlayerController extends Node3D
 
-signal input_dir_changed(direction: Vector2)
-signal want_jump()
+signal on_camera_focus()
 
-var current_direction: Vector2 = Vector2.ZERO
+var input_direction: Vector2 = Vector2.ZERO
+var is_jump_pressed: bool = false
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("Jump"):
-		want_jump.emit()
+	if event.is_action_pressed("CameraFocus"):
+		on_camera_focus.emit()
 
 func _physics_process(_delta: float) -> void:
-	var input_dir := Vector2.ZERO
+	# On met à jour la direction en permanence
+	input_direction = Input.get_vector("Left", "Right", "Forward", "Backward").normalized()
 	
-	input_dir = Input.get_vector("Left", "Right", "Forward", "Backward");
-	
-	input_dir = input_dir.normalized()
-	
-	if input_dir != current_direction:
-		current_direction = input_dir
-		input_dir_changed.emit(current_direction)
+	# On lit si le saut vient d'être pressé
+	is_jump_pressed = Input.is_action_just_pressed("Jump")
