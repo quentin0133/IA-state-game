@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://k4bnjg1srj1x"]
+[gd_scene format=3 uid="uid://k4bnjg1srj1x"]
 
 [ext_resource type="Material" uid="uid://cp0hxkuq3f46h" path="res://assets/materials/depth_fade/wall.tres" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://c6mi6u1ty5nqr" path="res://scenes/player/player.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://durbetmi3k4q3" path="res://scenes/enemy/mma_enemy.tscn" id="3_sugp2"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_sgp6g"]
 
@@ -14,42 +15,39 @@ albedo_color = Color(0.5, 0.5, 0.5, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sugp2"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_0wfyh"]
+[node name="Node" type="Node3D" unique_id=271651008]
 
-[node name="Node" type="Node3D"]
-
-[node name="Ground" type="MeshInstance3D" parent="."]
+[node name="Ground" type="MeshInstance3D" parent="." unique_id=1564444832]
 transform = Transform3D(25, 0, 0, 0, 1, 0, 0, 0, 25, 0, 0, 0)
 layers = 8
 mesh = SubResource("BoxMesh_sgp6g")
 surface_material_override/0 = SubResource("StandardMaterial3D_o5qli")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Ground"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Ground" unique_id=198436650]
 collision_layer = 8
 collision_mask = 8
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/StaticBody3D" unique_id=922059312]
 shape = SubResource("BoxShape3D_0wfyh")
 
-[node name="Wall" type="MeshInstance3D" parent="."]
+[node name="Wall" type="MeshInstance3D" parent="." unique_id=486560395]
 transform = Transform3D(5, 0, 0, 0, 3, 0, 0, 0, 0.5, 0, 2, 2)
 layers = 4
 mesh = SubResource("BoxMesh_o5qli")
 surface_material_override/0 = ExtResource("1_0wfyh")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Wall"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall" unique_id=955034789]
 collision_layer = 4
 collision_mask = 4
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall/StaticBody3D" unique_id=118823832]
 shape = SubResource("BoxShape3D_sugp2")
 
-[node name="Player" parent="." instance=ExtResource("1_o5qli")]
+[node name="Player" parent="." unique_id=2109545315 instance=ExtResource("1_o5qli")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=386468799]
 transform = Transform3D(1, 0, 0, 0, -0.66199243, 0.7495105, 0, -0.7495105, -0.66199243, 0, 0, 0)
 
-[node name="Enemy" type="MeshInstance3D" parent="." groups=["Enemy"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7435417, 1.7923439, -0.8249186)
-mesh = SubResource("CapsuleMesh_0wfyh")
+[node name="MMA" parent="." unique_id=424208490 instance=ExtResource("3_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.657, 0.5, 0)

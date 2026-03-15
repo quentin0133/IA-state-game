@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://4mg33wci6b0v"
-path="res://.godot/imported/Cross.fbx-d0296b8825b59a88081b98894efb7116.scn"
+uid="uid://2udmy3kywey5"
+path="res://.godot/imported/Jog Backward Diagonal Right.fbx-dff8d4e06c0d8430f815767e6b5ead9e.scn"
 
 [deps]
 
-source_file="res://assets/model3D/player/sources/Cross.fbx"
-dest_files=["res://.godot/imported/Cross.fbx-d0296b8825b59a88081b98894efb7116.scn"]
+source_file="res://assets/model3D/player/sources/normal/Jog Backward Diagonal Right.fbx"
+dest_files=["res://.godot/imported/Jog Backward Diagonal Right.fbx-dff8d4e06c0d8430f815767e6b5ead9e.scn"]
 
 [params]
 

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bfx063ttohevm"
-path="res://.godot/imported/Jog Strafe Right.fbx-442a6ae1fe90f2ad2cd0c64896d60441.scn"
+uid="uid://4mg33wci6b0v"
+path="res://.godot/imported/Cross.fbx-f9205d4dc44e50c4ef9565a711d210dc.scn"
 
 [deps]
 
-source_file="res://assets/model3D/player/sources/Jog Strafe Right.fbx"
-dest_files=["res://.godot/imported/Jog Strafe Right.fbx-442a6ae1fe90f2ad2cd0c64896d60441.scn"]
+source_file="res://assets/model3D/player/sources/battle/Cross.fbx"
+dest_files=["res://.godot/imported/Cross.fbx-f9205d4dc44e50c4ef9565a711d210dc.scn"]
 
 [params]
 
@@ -41,9 +41,9 @@ _subresources={
 "animations": {
 "mixamo_com": {
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://assets/model3D/player/animations/Jog Strafe Right.res",
+"save_to_file/fallback_path": "res://assets/model3D/player/animations/battle/Cross.res",
 "save_to_file/keep_custom_tracks": "",
-"save_to_file/path": "uid://cvcmi0kwdnr52",
+"save_to_file/path": "uid://bkysa4ulnyexa",
 "settings/loop_mode": 1,
 "slice_1/end_frame": 0,
 "slice_1/loop_mode": 0,

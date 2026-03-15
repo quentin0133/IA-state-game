@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bl4wjailjpc3k"
-path="res://.godot/imported/Jog Strafe Left.fbx-eda9a05eb89374c1bec4ef5d23520a1e.scn"
+uid="uid://bqrgx8b25n8d4"
+path="res://.godot/imported/Jog Forward.fbx-2585ab06deea5bca615b3f011371734c.scn"
 
 [deps]
 
-source_file="res://assets/model3D/player/sources/Jog Strafe Left.fbx"
-dest_files=["res://.godot/imported/Jog Strafe Left.fbx-eda9a05eb89374c1bec4ef5d23520a1e.scn"]
+source_file="res://assets/model3D/player/sources/normal/Jog Forward.fbx"
+dest_files=["res://.godot/imported/Jog Forward.fbx-2585ab06deea5bca615b3f011371734c.scn"]
 
 [params]
 
@@ -41,9 +41,9 @@ _subresources={
 "animations": {
 "mixamo_com": {
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://assets/model3D/player/animations/Jog Strafe Left.res",
+"save_to_file/fallback_path": "res://assets/model3D/player/animations/normal/Jog Forward.res",
 "save_to_file/keep_custom_tracks": "",
-"save_to_file/path": "uid://cj8sqi50to7bw",
+"save_to_file/path": "uid://csqc8dj8pesqp",
 "settings/loop_mode": 1,
 "slice_1/end_frame": 0,
 "slice_1/loop_mode": 0,

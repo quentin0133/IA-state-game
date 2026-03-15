@@ -52,7 +52,6 @@ func _physics_process(delta):
 	
 	if is_instance_valid(focused_target):
 		target_direction = (global_position - focused_target.global_position).normalized()
-		print(target_direction)
 		is_rotating_camera = true
 	elif is_recentering:
 		target_direction = -player.visual.basis.z.normalized()
@@ -98,14 +97,12 @@ func unfocus_camera():
 func get_visible_enemies():
 	var visible_elements = []
 	var camera = get_viewport().get_camera_3d()
-
+	
 	# On itère sur un groupe d'objets spécifiques
 	for enemy in get_tree().get_nodes_in_group("Enemy"):
 		if camera.is_position_in_frustum(enemy.global_position):
 			visible_elements.append(enemy)
 	
-	print(get_tree().get_nodes_in_group("Enemy"))
-
 	return visible_elements
 
 func get_relative_direction_y(direction: Vector2):

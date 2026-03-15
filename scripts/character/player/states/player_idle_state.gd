@@ -19,6 +19,10 @@ func update(_delta: float) -> void:
 
 # Appelé à chaque frame physique (comme _physics_process)
 func physics_update(_delta: float) -> void:
+	if player.controller.is_attack_pressed:
+		state_machine.transition_to("Attack")
+		return
+	
 	if player.controller.input_direction != Vector2.ZERO:
 		state_machine.transition_to("Move")
 		return

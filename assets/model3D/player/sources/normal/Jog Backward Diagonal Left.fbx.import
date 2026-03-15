@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dx4mapxd7rkq3"
-path="res://.godot/imported/Jog Backward Diagonal Left.fbx-ca7500afb42f9638c5b37b8e88275412.scn"
+path="res://.godot/imported/Jog Backward Diagonal Left.fbx-5714ccbf087fbad5377bc412fd64606f.scn"
 
 [deps]
 
-source_file="res://assets/model3D/player/sources/Jog Backward Diagonal Left.fbx"
-dest_files=["res://.godot/imported/Jog Backward Diagonal Left.fbx-ca7500afb42f9638c5b37b8e88275412.scn"]
+source_file="res://assets/model3D/player/sources/normal/Jog Backward Diagonal Left.fbx"
+dest_files=["res://.godot/imported/Jog Backward Diagonal Left.fbx-5714ccbf087fbad5377bc412fd64606f.scn"]
 
 [params]
 
